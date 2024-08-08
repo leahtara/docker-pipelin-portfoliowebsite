@@ -7,7 +7,9 @@ jobs:
   publish-image: 
     name: push image
     runs-on: ubuntu-latest
+    
     steps:
+    
       - name: Check out the repo
         uses: actions/checkout@v3
       - name: log into docker hub
@@ -15,12 +17,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
-       - name: Extract metadata (tags, labels) for Docker
+          
+      - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: leahtara/portfolio
-       - name: Build and push Docker image
+      - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           context: .
