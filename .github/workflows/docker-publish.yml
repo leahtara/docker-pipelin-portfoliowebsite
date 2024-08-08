@@ -1,4 +1,5 @@
-name: publish image to docker hub
+name: docker pipeline
+  
 on:
   [workflow_dispatch]
 
