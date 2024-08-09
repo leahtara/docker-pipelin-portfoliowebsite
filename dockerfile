@@ -1,5 +1,4 @@
-FROM httpd
-COPY . /usr/local/apache2/htdocs/
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
 
-EXPOSE 4000
-CMD ["start","index.html"]
+
